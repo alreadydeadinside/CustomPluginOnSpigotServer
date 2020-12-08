@@ -1,0 +1,5 @@
+name: CustomItemsAndRecipesPlugin
+version: 1.0
+author: alreadydeadinside
+main: com.alreadydeadinside.custom_items_and_recipis_plugin
+api-version: 1.14
