@@ -3,3 +3,14 @@ version: 1.0
 author: alreadydeadinside
 main: com.alreadydeadinside.custom_items_and_recipis_plugin
 api-version: 1.14
+commands:
+  heal:
+    description: Heals player to max health
+    usage: /<command>
+    aliases: [healing, healme, healmax]
+  feed:
+    description: Feeds player to max saturation
+    usage: /<command>
+    aliases: [feeding, feedme, feedmax]
+
+
