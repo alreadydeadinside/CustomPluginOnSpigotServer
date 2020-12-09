@@ -1,5 +1,6 @@
 package com.alreadydeadinside.custom_items_and_recipes_plugin;
 
+import com.alreadydeadinside.custom_items_and_recipes_plugin.commands.PluginCommands;
 import com.alreadydeadinside.custom_items_and_recipes_plugin.events.PluginEvents;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -11,13 +12,14 @@ import org.bukkit.plugin.java.JavaPlugin;
  *
  */
 
-
 public class Plugin extends JavaPlugin {
-
     //TODO methods, that will notify user in console about enabling/disabling server (DONE)
 
     @Override
     public void onEnable(){
+        PluginCommands pluginCommands = new PluginCommands();
+        getCommand("heal").setExecutor(pluginCommands);
+        getCommand("feed").setExecutor(pluginCommands);
         getServer().getPluginManager().registerEvents(new PluginEvents(), this);
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[CustomItemsAndRecipesPlugin] Plugin is Enabled!");
     }
