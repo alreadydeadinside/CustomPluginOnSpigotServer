@@ -37,11 +37,15 @@ public class PluginCommands implements CommandExecutor {
             player.setFoodLevel(20); //max feed value
             player.sendMessage("You have been fed!");
         }
-        //farm time command
+        //farm time command (arguments)
         else if(cmd.getName().equalsIgnoreCase("farmtime")){
             if (args.length >= 2){
                 try {
-                    EntityType entity = EntityType.valueOf(args[0]);
+                    EntityType entity = EntityType.valueOf(args[0].toUpperCase());
+                    int amount = Integer.parseInt(args[1]);
+                    for (int i = 0; i < amount; i++){
+                        player.getWorld().spawnEntity(player.getLocation(), entity);
+                    }
                 } catch (IllegalArgumentException e){
                     player.sendMessage("That's is not a valid entity!");
                 }
