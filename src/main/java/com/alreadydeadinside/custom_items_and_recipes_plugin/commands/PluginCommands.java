@@ -4,6 +4,7 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 /**
@@ -29,13 +30,25 @@ public class PluginCommands implements CommandExecutor {
             double maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue();
             player.setHealth(maxHealth);
             player.sendMessage("You have been healed!");
-            return true;
         }
 
         //feed command
-        if (cmd.getName().equalsIgnoreCase("feed")){
+        else if (cmd.getName().equalsIgnoreCase("feed")){
             player.setFoodLevel(20); //max feed value
             player.sendMessage("You have been fed!");
+        }
+        //farm time command
+        else if(cmd.getName().equalsIgnoreCase("farmtime")){
+            if (args.length >= 2){
+                try {
+                    EntityType entity = EntityType.valueOf(args[0]);
+                } catch (IllegalArgumentException e){
+                    player.sendMessage("That's is not a valid entity!");
+                }
+                //TODO add description
+            } else{
+                player.sendMessage("/farmtime <mob> <amount>");
+            }
         }
 
         return true;
