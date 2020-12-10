@@ -12,5 +12,9 @@ commands:
     description: Feeds player to max saturation
     usage: /<command>
     aliases: [feeding, feedme, feedmax]
+  farmtime:
+    description: Spawns entities
+    usage: /<command> <mob> <amount>
+    aliases: farm
 
 
