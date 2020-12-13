@@ -18,7 +18,6 @@ import java.util.List;
 //TODO specified item from Minecraft list, add commands to it.
 public class ItemManager {
     public static ItemStack wand;
-    public static ItemStack lock;
 
     public static void init(){
         createWand();
@@ -33,7 +32,7 @@ public class ItemManager {
         lore.add("Minecraft's ancient history!");
         itemMeta.setLore(lore);
         itemMeta.addEnchant(Enchantment.LUCK, 100, false); //set true, if you want to enchant item to an exist lvl of enchantment in Minecraft
-        itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS); //hiding enchantment lvl in desc
         newItem.setItemMeta(itemMeta);
         wand = newItem;
     }

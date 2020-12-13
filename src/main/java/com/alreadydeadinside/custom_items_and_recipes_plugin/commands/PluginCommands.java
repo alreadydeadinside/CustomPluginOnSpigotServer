@@ -1,5 +1,6 @@
 package com.alreadydeadinside.custom_items_and_recipes_plugin.commands;
 
+import com.alreadydeadinside.custom_items_and_recipes_plugin.items.ItemManager;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -54,7 +55,9 @@ public class PluginCommands implements CommandExecutor {
                 player.sendMessage("/farmtime <mob> <amount>");
             }
         }
-
+        else  if(cmd.getName().equalsIgnoreCase("wand")){ //add wand, as a command
+            player.getInventory().addItem(ItemManager.wand);
+        }
         return true;
     }
 }
