@@ -33,7 +33,7 @@ public class PluginCommands implements CommandExecutor {
             player.sendMessage("You have been healed!");
         }
 
-        //feed command
+        //feed commandg
         else if (cmd.getName().equalsIgnoreCase("feed")){
             player.setFoodLevel(20); //max feed value
             player.sendMessage("You have been fed!");

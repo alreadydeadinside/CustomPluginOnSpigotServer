@@ -52,7 +52,7 @@ public class PluginEvents implements Listener {
                 if(playerInteractEvent.getItem().getItemMeta().equals(ItemManager.wand.getItemMeta())){ //use case, when we have wand
                     Player player = playerInteractEvent.getPlayer();
                     player.getWorld().createExplosion(player.getLocation(), 2.0f);
-                    player.sendMessage("You've just exploded!");
+                    player.sendMessage("You've just explode some area!");
                 }
             }
         }
