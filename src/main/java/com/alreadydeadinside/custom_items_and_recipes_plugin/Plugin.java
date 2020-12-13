@@ -20,6 +20,7 @@ public class Plugin extends JavaPlugin {
         PluginCommands pluginCommands = new PluginCommands();
         getCommand("heal").setExecutor(pluginCommands);
         getCommand("feed").setExecutor(pluginCommands);
+        getCommand("farmtime").setExecutor(pluginCommands);
         getServer().getPluginManager().registerEvents(new PluginEvents(), this);
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[CustomItemsAndRecipesPlugin] Plugin is Enabled!");
     }
