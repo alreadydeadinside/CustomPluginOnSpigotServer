@@ -2,6 +2,7 @@ package com.alreadydeadinside.custom_items_and_recipes_plugin;
 
 import com.alreadydeadinside.custom_items_and_recipes_plugin.commands.PluginCommands;
 import com.alreadydeadinside.custom_items_and_recipes_plugin.events.PluginEvents;
+import com.alreadydeadinside.custom_items_and_recipes_plugin.items.ItemManager;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,6 +24,8 @@ public class Plugin extends JavaPlugin {
         getCommand("farmtime").setExecutor(pluginCommands);
         getServer().getPluginManager().registerEvents(new PluginEvents(), this);
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[CustomItemsAndRecipesPlugin] Plugin is Enabled!");
+
+        ItemManager.init();
     }
     @Override
     public void onDisable(){
