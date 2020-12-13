@@ -16,5 +16,9 @@ commands:
     description: Spawns entities
     usage: /<command> <mob> <amount>
     aliases: farm
+  wand:
+    description: Give Stick to a player, enchanted to "Lucky 100"
+    usage: /<command>
+    aliases: wand
 
 
