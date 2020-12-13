@@ -26,6 +26,7 @@ public class Plugin extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[CustomItemsAndRecipesPlugin] Plugin is Enabled!");
 
         ItemManager.init();
+        getCommand("wand").setExecutor(pluginCommands);
     }
     @Override
     public void onDisable(){
