@@ -1,8 +1,9 @@
 package com.alreadydeadinside.custom_items_and_recipes_plugin.items;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
@@ -35,5 +36,24 @@ public class ItemManager {
         itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS); //hiding enchantment lvl in desc
         newItem.setItemMeta(itemMeta);
         wand = newItem;
+
+        //TODO some recipes (idk which exactly)
+        //Shaped Recipe
+        ShapedRecipe shapedRecipe = new ShapedRecipe(NamespacedKey.minecraft("wand"), newItem);
+        shapedRecipe.shape("B  ", " S ", "  S");
+        shapedRecipe.setIngredient('B', Material.BLAZE_POWDER);
+        shapedRecipe.setIngredient('S', Material.STICK);
+        shapedRecipe.setIngredient('S', Material.STICK);
+        Bukkit.getServer().addRecipe(shapedRecipe);
+
+        //Shapeless Recipe
+        ShapelessRecipe shapelessRecipe = new ShapelessRecipe(NamespacedKey.minecraft("wand_shapeless"), newItem);
+        shapelessRecipe.addIngredient(2, Material.BLAZE_POWDER);
+        shapelessRecipe.addIngredient(1, Material.DIAMOND);
+        Bukkit.getServer().addRecipe(shapelessRecipe);
+
+        //Furnace Recipe
+        FurnaceRecipe furnaceRecipe = new FurnaceRecipe(NamespacedKey.minecraft("wand_smelt"), newItem, Material.EMERALD, 1.0f, 10 * 20);
+        Bukkit.getServer().addRecipe(furnaceRecipe);
     }
 }
