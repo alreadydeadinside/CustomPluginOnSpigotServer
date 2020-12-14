@@ -55,5 +55,13 @@ public class ItemManager {
         //Furnace Recipe
         FurnaceRecipe furnaceRecipe = new FurnaceRecipe(NamespacedKey.minecraft("wand_smelt"), newItem, Material.EMERALD, 1.0f, 10 * 20);
         Bukkit.getServer().addRecipe(furnaceRecipe);
+
+        ShapedRecipe shapedRecipe1 = new ShapedRecipe(NamespacedKey.minecraft("lock"), newItem);
+        shapedRecipe1.setIngredient('S', Material.DIAMOND);
+        shapedRecipe1.setIngredient('S', Material.GOLD_INGOT);
+        shapedRecipe1.setIngredient('S', Material.IRON_INGOT);
+
+        FurnaceRecipe fr = new FurnaceRecipe(NamespacedKey.minecraft("wordpress"), newItem, Material.SPRUCE_WOOD, 23.05f, 20*50);
+        Bukkit.getServer().addRecipe(fr);
     }
 }
